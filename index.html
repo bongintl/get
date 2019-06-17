@@ -1,0 +1,249 @@
+<html>
+    
+    <head>
+        
+        <title>Get Records</title>
+        
+        <script src="//use.typekit.net/qms1swi.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+        
+        <link rel="stylesheet" href="css/icons.css">
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    
+    <body>
+        
+        <div id ='mute'>
+            <span class="icon-mute"></span>
+            <span class="icon-unmute"></span>
+        </div>
+        
+        <img id="taptap" src="img/taptap.gif">
+        
+        <div id="container">
+            
+            <div id="header">
+                
+                <span id="title">Get Records <span class="serif">from Activia Benz</span></span>
+                
+            </div>
+            
+            <div id="tracks">
+                
+                <canvas id="lines" width="1140" height="1"></canvas>
+                
+                <div id="rows">
+                
+                    <div class="row" data-track="173283101">
+                
+                        <span class="artist">MMOTHS</span>
+                        
+                        <span class="title">Yago</span>
+                        
+                    </div>
+
+                    <div class="row" data-track="189202289">
+                    
+                        <span class="artist">Com Truise</span>
+                        
+                        <span class="title">Forgive</span>
+                        
+                    </div>
+
+                    <div class="row" data-track="170768506">
+                    
+                        <span class="artist">SIR_</span>
+                        
+                        <span class="title">Love You</span>
+                        
+                    </div>
+                    
+                    <div class="row feature" data-track="176254467">
+                    
+                        <span class="title type-black">Interview</span>
+                        
+                        <span class="artist serif"><i>Toby Gale</i></span>
+                        
+                        <div class="feature">
+                            
+                            
+                            
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="row" data-track="158922045">
+                    
+                        <p class="artist">Steve Reich</p>
+                        
+                        <p class="title">Electric Counterpoint <span class="condensed">(Monk' Rework)</span></p>
+                        
+                    </div>
+                    
+                    <div class="row" data-track="136916269">
+                    
+                        <span class="artist">Silkersoft</span>
+                        
+                        <span class="title">Wasserlevel</span>
+                        
+                    </div>
+                    
+                    <div class="row" data-track="189077054">
+                    
+                        <span class="artist">Royce Wood Jr</span>
+                        
+                        <span class="title">Midnight</span>
+                        
+                    </div>
+                    
+                    <div class="row" data-track="135466533">
+                    
+                        <span class="artist">Slugabed</span>
+                        
+                        <span class="title">Another Chance 2K14</span>
+                        
+                    </div>
+                    
+                    <div class="row" data-track="120895389">
+                    
+                        <span class="artist">DJ DJ Booth</span>
+                        
+                        <span class="title">Sknybdyfmymnrrwdy</span>
+                        
+                    </div>
+                    
+                    <div class="row" data-track="81180146">
+                    
+                        <span class="artist">813</span>
+                        
+                        <span class="title">The Whaler</span>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            
+            <div id="footer">
+                
+                About | <span id="submit"><a href="mailto:submit@activiabenz.com">Submit</a></span>
+                
+                <a href="http://activiabenz.com">
+                    <img class="black" src="img/ackyb.svg">
+                    <img class="white" src="img/ackyb_white.svg">
+                </a>
+                
+                <a href="http://bong.international/">
+                    <img class="black" src="img/bong.svg">
+                    <img class="white" src="img/bong_white.svg">
+                </a>
+                
+            </div>
+            
+
+        </div>
+        
+        <script src="https://w.soundcloud.com/player/api.js"></script>
+        <script src="//connect.soundcloud.com/sdk.js"></script>
+        <script src="js/utils.js"></script>
+        <script src="js/perlin.js"></script>
+        <script src="js/events.js"></script>
+        <script src="js/loading.js"></script>
+        <script src="js/waggle.js"></script>
+        <script src="js/sound.js"></script>
+        <script src="js/player.js"></script>
+        
+        <script>
+            
+            var ROW_HEIGHT = 56,
+                SPEED = 300;
+            
+            var rows,
+                players = [],
+                mixer,
+                waggler,
+                night = false,
+                muted = docCookies.getItem('muted') === "false" ? false : true,
+                now = Date.now(),
+                then = Date.now(),
+                loadIndicator = new Loading(function(){
+                    document.body.classList.add('loading');
+                }, function(){
+                    document.body.classList.remove('loading');
+                });
+                
+            function init(done){
+                
+                var tapper = document.getElementById('taptap');
+                
+                window.addEventListener('mousemove', function(e){
+                    tapper.style.top = e.clientY;
+                    tapper.style.left = e.clientX - 5;
+                });
+                
+                var h = new Date().getHours();
+                
+                if(h < 9 || h >= 17){
+                    document.body.classList.add('black');
+                    night = true;
+                }
+
+                SC.initialize({
+                    client_id: '81806984dfe5333557a3c6249db57e7c',
+                    preferFlash: false
+                });
+                
+                mixer = new Mixer();
+                
+                var bgCanvas = document.getElementById('lines');
+                waggler = new Waggles(bgCanvas, ROW_HEIGHT, SPEED);
+                
+                rows = document.querySelectorAll('.row');
+                
+                loadPlayerSequence(rows);
+                
+                var mute = document.getElementById('mute');
+                
+                if(muted) mute.className = 'on';
+                
+                mute.addEventListener('click', function(){
+                    muted = !muted;
+                    docCookies.removeItem('muted');
+                    docCookies.setItem('muted', muted, Infinity);
+                    mute.className = mute.className.length ? '' : 'on';
+                });
+                
+                /*
+                document.querySelector('#rows').addEventListener('mouseleave', function(){
+                    mixer.pause();
+                });
+                */
+            }
+            
+            function loop(){
+                
+                now = Date.now();
+                
+                waggler.step(now, then);
+                mixer.step(now);
+                
+                then = now;
+                
+                requestAnimFrame(loop);
+                
+            };
+        
+            document.addEventListener('DOMContentLoaded', function(){
+                
+                init();
+                loop();
+                
+            });
+            
+        </script>
+        
+    </body>
+    
+</html>

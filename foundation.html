@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!--[if IE 9]><html class="lt-ie10" lang="en" > <![endif]-->
+<html class="no-js" lang="en" >
+
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Get Records</title>
+  
+  <script src="//use.typekit.net/qms1swi.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/foundation.css">
+  <link rel="stylesheet" href="css/baseline.css">
+
+  <style>
+    
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    
+    body{
+      font-family: 'Arial Black';
+      letter-spacing: 1px;
+    }
+    
+    body.black{
+      color: white;
+      background: #888;
+    }
+    
+    .row{
+      max-width: 1400px;
+    }
+    
+    .text-condensed{
+      font-family: 'Arial Narrow';
+    }
+    
+    .text-serif{
+      font-family: serif;
+    }
+    
+    .text-italic{
+      font-style: italic;
+    }
+    
+    .text-right{
+      text-align: right;
+    }
+    
+    .text-justify{
+      text-align: justify;
+    }
+    
+    .text-bold{
+      font-weight: bold;
+    }
+    
+    .text-white{
+      color: white;
+    }
+    
+    .tip-left{
+      display: inline-block;
+      position: relative;
+      -webkit-transform-origin: 50% 0;
+      -webkit-transform: rotate(330deg);
+    }
+    
+    .tip-right{
+      display: inline-block;
+      position: relative;
+      -webkit-transform-origin: 25% 0;
+      -webkit-transform: rotate(30deg);
+    }
+    
+    .img-bg{
+      width: 100%;
+      background-size: cover !important;
+      background-position: center center fixed;
+    }
+    
+    #footer img{
+      display: inline-block;
+      margin-left: 1rem;
+    }
+    
+    #footer img.white{
+      display: none;
+    }
+    
+    body.black #footer img.white{
+      display: inline-block;
+    }
+    
+    body.black #footer img.black{
+      display: none;
+    }
+
+    
+  </style>
+
+  <script src="js/vendor/modernizr.js"></script>
+
+</head>
+
+<body class="black">
+  
+  <div class="row">
+    
+    <div class="small-12 large-10 columns large-offset-1 pad-bottom-5">
+      
+      <div class="row">
+        
+        <div class="small-12 columns pad-top-3 pad-bottom-2">Get Records <span class="text-serif text-italic">from Activia Benz</span></div>
+        
+      </div>
+      
+      <div class="row">
+      
+          <div class="small-6 medium-5 columns medium-offset-1 text-2 text-2">
+            Yago
+          </div>
+          
+          <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right text-2">
+            MMOTHS
+          </div>
+          
+        </div>
+        
+        <div class="row">
+      
+          <div class="small-6 medium-5 columns medium-offset-1 text-2">
+            Forgive
+          </div>
+          
+          <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+            Com Truise
+          </div>
+            
+        </div>
+        
+        <div class="row">
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Love You <!-- <span class="text-condensed"> (Judas Preist remix)</span> -->
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-right text-2">
+              SIR_
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Electric Counterpoint
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+              Steve Reich
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Silkersoft
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+              Wasserlevel
+            </div>
+            
+        </div>
+        
+        <div id="int-head" class="row">
+        
+            <div class="small-6 columns text-bold text-2">
+              Interview
+            </div>
+            
+            <div class="small-6 columns text-right text-serif text-bold text-2">
+              Toby Gale
+            </div>
+            
+        </div>
+        
+        <div id="int-body" class="row pad-top-1 pad-bottom-2">
+          
+          <div class="small-12 medium-6 columns">
+            
+            <div class="row">
+              
+              <div class="small-12 columns text-2 text-serif pad-bottom-1">
+                
+                Toby Gale is a young and cool producer coming straight outta London town. I was friends with him in primary school and we used to play Music2000 on Playstation together.
+                
+              </div>
+              
+            </div>
+            
+            <div class="row">
+              
+              <div class="small-10 columns pad-bottom-1 text-bold text-serif">
+                
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fermentum lacus vitae eleifend auctor?
+                
+              </div>
+              
+              <div class="small-2 columns text-right">
+                <span class="tip-right">AB</span>
+              </div>
+              
+            </div>
+            
+            <div class="row">
+              
+              <div class="small-2 columns">
+                <span class="tip-left">TG</span>
+              </div>
+              
+              <div class="small-10 columns pad-bottom-1">
+                
+                Aliquam tincidunt vulputate libero, ut sodales nisi interdum eu. Sed tempor mi diam, eleifend iaculis ante feugiat sed. Curabitur ultricies sem quis tellus elementum bibendum.
+                
+              </div>
+              
+            </div>
+            
+          
+            <div class="row">
+              
+              <div class="small-10 columns pad-bottom-1 text-bold text-serif">
+                
+                Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos?
+                
+              </div>
+              
+              <div class="small-2 columns text-right">
+                <span class="tip-right">AB</span>
+              </div>
+              
+            </div>
+            
+            <div class="row">
+              
+              <div class="small-2 columns">
+                <span class="tip-left">TG</span>
+              </div>
+              
+              <div class="small-10 columns pad-bottom-1">
+                
+                Cras finibus hendrerit urna, a mollis purus volutpat eget. Duis pretium, lorem quis laoreet gravida, arcu sem ullamcorper mauris, nec convallis est ipsum vel enim. Quisque ultricies, nisi vitae vehicula ullamcorper, mi quam sagittis felis, sed lobortis ligula tellus id enim.
+                
+              </div>
+              
+            </div>
+            
+          </div>
+          
+          <div class="small-12 medium-6 columns">
+            
+            <div class="height-14 margin-bottom-1 img-bg" style='background:url("http://www.tapeclubrecords.com/wp-content/uploads/2013/07/Toby-Gale-800px-96dpi.jpg")'></div>
+            
+            <div class="height-15 img-bg" style='background:url("http://f1.bcbits.com/img/a1955554812_10.jpg")'></div>
+            
+          </div>
+          
+        </div>
+        
+        <div class="row">
+        
+          <div class="small-6 medium-5 columns medium-offset-1 text-2">
+            Yago
+          </div>
+          
+          <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+            MMOTHS
+          </div>
+          
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Forgive
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+              Com Truise
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Love You <!-- <span class="text-condensed"> (Judas Preist remix)</span> -->
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+              SIR_
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Electric Counterpoint
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+              Steve Reich
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Silkersoft
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+              Wasserlevel
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 columns text-bold text-2">
+              Feature
+            </div>
+            
+            <div class="small-6 columns text-right text-serif text-bold text-2">
+              What is Music????
+            </div>
+            
+        </div>
+        <div class="row pad-top-1 pad-bottom-2">
+          
+          <div class="small-12 columns">
+            
+            <div class="row height-20 margin-bottom-1 img-bg" style='background:url("http://40.media.tumblr.com/39104e124fb94f8d1d0b5f4e5602e04d/tumblr_nf552fZdUO1qang03o1_1280.png")'></div>
+            
+            <div class="small-10 small-offset-1 text-1-5 pad-top-1 pad-bottom-1 text-justify">
+              Britain's cyclists can still "do the business" at Rio 2016 despite leaving the Track World Championships without a single gold medal for the first time in 14 years, Shane Sutton says. British Cycling's technical director admitted the challenge "would not be easy". But he told BBC Sport: "I know that we're competitive in probably seven medal events in track." Great Britain won three silver medals in Paris.
+            </div>
+            
+            
+            <div class="row height-20 margin-bottom-1 img-bg" style='background:url("http://40.media.tumblr.com/8aded72e3cd79baf258d80930441aed4/tumblr_nk01twvogn1r7fqe6o1_1280.jpg")'></div>
+            
+            
+            <div class="small-10 small-offset-1 text-1-5 pad-top-1 text-justify">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam sapien magna, sodales in nulla nec, maximus elementum lacus. Vivamus rutrum pulvinar velit non eleifend. Proin convallis porta enim, quis tristique sem sollicitudin id. Sed interdum sem ac volutpat ullamcorper. Aenean et fringilla sapien, vitae rutrum lacus. Quisque bibendum, enim egestas condimentum vestibulum, mi mauris vestibulum orci, a tincidunt leo magna et dolor. Fusce et porttitor orci. Integer vulputate quam tempus augue eleifend convallis. Aliquam erat volutpat. Curabitur at consectetur nunc.
+            </div>
+          </div>
+            
+
+        </div>
+        
+        <div class="row">
+        
+          <div class="small-6 medium-5 columns medium-offset-1 text-2">
+            Yago
+          </div>
+          
+          <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+            MMOTHS
+          </div>
+          
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Forgive
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+              Com Truise
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 columns medium-offset-1">
+              Love You <!-- <span class="text-condensed"> (Judas Preist remix)</span> -->
+            </div>
+            
+            <div class="small-6 medium-5 columns text-right">
+              SIR_
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Electric Counterpoint
+            </div>
+            
+            <div class="small-6 medium-5 columns medium-offset-1 text-2 text-right">
+              Steve Reich
+            </div>
+            
+        </div>
+        
+        <div class="row">
+        
+            <div class="small-6 medium-5 columns medium-offset-1 text-2">
+              Silkersoft
+            </div>
+            
+            <div class="small-6 columns text-right">
+              Wasserlevel
+            </div>
+            
+        </div>
+        
+        <div id="footer" class="row pad-top-5">
+          
+          <div class="small-6 columns">
+            About | Submit<br>
+            &copy; 2015 Activia Benz
+          </div>
+          
+          <div class="small-6 columns text-right">
+            
+                <a href="http://activiabenz.com">
+                    <img class="black height-2" src="img/ackyb.svg">
+                    <img class="white height-2" src="img/ackyb_white.svg">
+                </a>
+                
+                <a href="http://bong.international/">
+                    <img class="black height-2" src="img/bong.svg">
+                    <img class="white height-2" src="img/bong_white.svg">
+                </a>
+                
+          </div>
+          
+        </div>
+        
+      </div>
+      
+    </div>
+    
+  </div>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script>
+    $(document).foundation();
+    
+    $('#int-body').slideUp();
+    
+    $('#int-head').click(function(){
+      $('#int-head').addClass('pad-top-1');
+      $('#int-body').slideDown();
+    });
+    
+  </script>
+</body>
+</html>
